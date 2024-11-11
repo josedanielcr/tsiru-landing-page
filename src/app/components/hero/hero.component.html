@@ -1,0 +1,90 @@
+<!-- Hero -->
+<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Grid -->
+  <div class="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
+    <div class="lg:col-span-3">
+      <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl">Donde el producto te encuentra</h1>
+      <p class="mt-3 text-lg text-gray-800">Tsiru es una app que bblablabla y que hace esto y esto y te ayuda a solventar esto y aja.</p>
+
+      <div class="mt-5 lg:mt-8 items-center gap-2 sm:flex-row sm:gap-3 w-full">
+          <div class="flex flex-col rounded-xl">
+            <div class="bg-gray-100 rounded-t-xl pt-3">
+              <nav class="flex gap-x-2">
+                <a class="-mb-px py-3 px-4  text-sm font-medium text-center border-b-transparent cursor-pointer
+                text-gray-500 rounded-t-lg hover:text-gray-700 focus:outline-none focus:text-gray-700 focus:z-10" (click)="onTabChange(0)"
+                [ngClass]="{
+                  'bg-white' : activeTabIndex === 0
+                }">
+                  Compradores
+                </a>
+
+                <a class="-mb-px py-3 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg hover:text-gray-700 focus:outline-none focus:text-gray-700 focus:z-10 cursor-pointer"
+                   (click)="onTabChange(1)"  [ngClass]="{
+                  'bg-white' : activeTabIndex === 1
+                }">
+                  Vendedores
+                </a>
+              </nav>
+            </div>
+            <div class="p-4 text-center md:py-7 md:px-5 bg-white rounded-bl-2xl rounded-br-2xl rounded-tr-2xl">
+              <!-- Input -->
+              @if(activeTabIndex === 0) {
+                <form>
+                  <div class="p-1.5 flex flex-col sm:flex-row items-center gap-2 rounded-lg">
+                    <div class="relative w-full">
+                      <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3">
+                        <svg class="shrink-0 size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                      </div>
+                      <input type="text" id="hero-input" name="hero-input" class="py-2 ps-9 pe-3 block w-full
+                     rounded-lg text-sm border-1
+                     disabled:opacity-50 disabled:pointer-events-none" placeholder="Ingresa tu correo electronico">
+                    </div>
+                    <a class="w-full sm:w-auto bg-accent whitespace-nowrap py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
+                      suscribirme
+                      <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                  </div>
+                  <p class="mt-2 text-xs text-gray-500">
+                    ¡Suscríbete y mantente al día con las últimas novedades, ofertas y actualizaciones de Tsiru!
+                  </p>
+                </form>
+              } @else {
+                <form>
+                  <div class="p-1.5 flex flex-col sm:flex-row items-center gap-2 rounded-lg">
+                    <div class="relative w-full">
+                      <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3">
+                        <svg class="shrink-0 size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                      </div>
+                      <input type="text" id="hero-input-v" name="hero-input" class="py-2 ps-9 pe-3 block w-full
+                     rounded-lg text-sm border-1
+                     disabled:opacity-50 disabled:pointer-events-none" placeholder="Ingresa tu correo electronico">
+                    </div>
+                    <a class="w-full sm:w-auto bg-accent whitespace-nowrap py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
+                      suscribirme
+                      <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                  </div>
+                  <p class="mt-2 text-xs text-gray-500">
+                    ¡Suscríbete y recibe las últimas novedades y actualizaciones de Tsiru para tu negocio!
+                  </p>
+                </form>
+              }
+              <!-- End Input -->
+            </div>
+          </div>
+      </div>
+
+      <!-- Separador -->
+      <div class="mt-6 lg:mt-12"></div>
+      <!-- End Brands -->
+    </div>
+    <!-- End Col -->
+
+    <div class="lg:col-span-4 mt-10 lg:mt-0">
+      <img class="w-full rounded-xl" src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&h=700&q=80" alt="Hero Image">
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Hero -->
