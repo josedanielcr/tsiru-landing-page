@@ -4,3 +4,8 @@
   background: url('Tsiru - Logo 2 Negro.png') no-repeat;
   background-size: contain;
 }
+
+.opt-nav-size {
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

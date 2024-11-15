@@ -1,0 +1,8 @@
+.hero-text-size {
+  font-size: 14px;
+}
+
+.rounded-hero-img {
+  border-top-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
