@@ -7,6 +7,7 @@ import {FeaturesComponent} from './components/features/features.component';
 import {FaqComponent} from './components/faq/faq.component';
 import {CompareComponent} from './components/compare/compare.component';
 import {FooterComponent} from './components/footer/footer.component';
+import {SubscribeComponent} from './components/subscribe/subscribe.component';
 declare global {
   interface Window {
     HSStaticMethods: IStaticMethods;
@@ -16,7 +17,7 @@ declare global {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, HeroComponent, FeaturesComponent, FaqComponent, CompareComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, HeroComponent, FeaturesComponent, FaqComponent, CompareComponent, FooterComponent, SubscribeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
