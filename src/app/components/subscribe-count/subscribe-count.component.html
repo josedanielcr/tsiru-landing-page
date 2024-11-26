@@ -1,0 +1,11 @@
+<div class="w-full flex justify-center pointer-events-none">
+  <div class="flex gap-1 mb-5">
+    <div *ngFor="let digit of digits; let i = index" class="digit-box bg-primary font-bold w-12 h-12 rounded text-white">
+      <!-- Current digit exiting -->
+      <span class="current-digit flex justify-center items-center">{{ digit }}</span>
+
+      <!-- Next digit entering -->
+      <span class="next-digit flex justify-center items-center" *ngIf="nextDigits[i]">{{ nextDigits[i] }}</span>
+    </div>
+  </div>
+</div>

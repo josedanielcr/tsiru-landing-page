@@ -1,0 +1,39 @@
+/* Digit box styles */
+.digit-box {
+  font-size: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-digit {
+  position: absolute;
+  animation: slideOutUp 0.3s ease-in-out;
+}
+
+.next-digit {
+  position: absolute;
+  animation: slideInUp 0.3s ease-in-out;
+}
+
+@keyframes slideOutUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
