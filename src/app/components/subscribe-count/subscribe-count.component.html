@@ -1,4 +1,8 @@
-<div class="w-full flex justify-center pointer-events-none">
+<div class="w-full flex flex-col justify-center items-center pointer-events-none">
+  <div class="mb-6 ps-16 pe-16">
+    <p class="text-xs text-gray-400">¡Ya somos <span class="font-bold">{{count}}</span> suscriptores que están un paso más adelante con las noticias y
+      actualizaciones de <span class="text-accent font-bold">Tsiru</span>!</p>
+  </div>
   <div class="flex gap-1 mb-5">
     <div *ngFor="let digit of digits; let i = index" class="digit-box bg-primary font-bold w-12 h-12 rounded text-white">
       <!-- Current digit exiting -->
