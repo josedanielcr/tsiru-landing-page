@@ -13,7 +13,7 @@ class ToastMessage {
 })
 export class ToastComponent {
   messagesQueue : ToastMessage[] = [];
-  private readonly TIMER = 3000;
+  private readonly TIMER = 5000;
 
   constructor() {
   }
