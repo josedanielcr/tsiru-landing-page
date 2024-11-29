@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable, signal, WritableSignal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {EmailValidationService} from './email-validation.service';
-import {Observable} from 'rxjs';
+import {map, Observable} from 'rxjs';
 import {MessageService} from './message.service';
 
 class SubscribeReq {
@@ -17,6 +17,8 @@ class SubscribeRes {
   providedIn: 'root'
 })
 export class SubscribeService {
+
+  counter : WritableSignal<number> = signal(0);
 
   constructor(private httpClient : HttpClient,
               private messageService : MessageService) { }
@@ -33,6 +35,7 @@ export class SubscribeService {
     subscribeCallback(email).subscribe({
       next: (res: any) => {
         this.messageService.setMessage(res.Message);
+        this.getCounter();
       },
     });
   }
@@ -41,5 +44,18 @@ export class SubscribeService {
     const req = new SubscribeReq();
     req.email = email;
     return this.httpClient.post<SubscribeRes>(environment.subscribe, req);
+  }
+
+  getCounter() {
+    return this.httpClient.get(environment.subscribersCount)
+      .pipe(
+        map((response: any) => {
+          const result = response as any;
+          this.counter.update(() => {
+            console.log('Subscribers count:', result.Total);
+            return result.Total
+          });
+        })
+      ).subscribe();
   }
 }

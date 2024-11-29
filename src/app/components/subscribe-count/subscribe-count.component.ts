@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, effect, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {SubscribeService} from '../../services/subscribe.service';
 
 @Component({
   selector: 'app-subscribe-count',
@@ -12,30 +13,32 @@ import {CommonModule} from '@angular/common';
   animations: []
 })
 export class SubscribeCountComponent implements OnInit {
-  count: number = 1500;
+  count: number = 0;
   digits: string[] = [];
   nextDigits: (string | null)[] = [];
+  minDigits = 4;
+
+  constructor(public subscribeService: SubscribeService) {
+    effect(() => {
+      this.count = this.subscribeService.counter();
+      this.incrementCount();
+    });
+  }
 
   ngOnInit(): void {
-    this.updateDigits();
-    //increment count every 1 second
-    setInterval(() => this.incrementCount(), 1000);
+    this.incrementCount();
   }
 
   incrementCount(): void {
+    const paddedCount = this.count.toString().padStart(this.minDigits, '0');
     const oldDigits = [...this.digits];
-    this.count++;
-    this.updateDigits();
-
-    // Prepare nextDigits array for animation
-    this.nextDigits = this.count.toString().split('').map((digit, i) => {
-      return digit !== oldDigits[i] ? digit : null;
+    this.digits = paddedCount.split('');
+    this.nextDigits = this.digits.map((digit, i) => {
+      if (oldDigits[i] === undefined || digit !== oldDigits[i]) {
+        return digit;
+      }
+      return null;
     });
-
     setTimeout(() => (this.nextDigits = []), 400);
-  }
-
-  private updateDigits(): void {
-    this.digits = this.count.toString().split('');
   }
 }

@@ -19,9 +19,9 @@ export class SubscribeComponent {
 
   readonly email: FormControl<string | null> = new FormControl('', [Validators.required]);
 
-  constructor(private subscribeService : SubscribeService,
+  constructor(public subscribeService : SubscribeService,
               private messageService : MessageService,
-              private emailValidationService : EmailValidationService) {}
+              public emailValidationService : EmailValidationService) {}
 
   subscribe() {
     if (this.email.invalid) {

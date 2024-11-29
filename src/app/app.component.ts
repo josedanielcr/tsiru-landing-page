@@ -10,6 +10,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {SubscribeComponent} from './components/subscribe/subscribe.component';
 import {ToastComponent} from './components/shared/toast/toast.component';
 import {MessageService} from './services/message.service';
+import {SubscribeService} from './services/subscribe.service';
 declare global {
   interface Window {
     HSStaticMethods: IStaticMethods;
@@ -28,11 +29,13 @@ export class AppComponent  implements OnInit, AfterViewInit {
   @ViewChild(ToastComponent) toastComponent: ToastComponent | undefined;
 
   constructor(private router : Router,
-              private messageService : MessageService) {
+              private messageService : MessageService,
+              private subscriptionService: SubscribeService) {
   }
 
   ngAfterViewInit(): void {
     this.messageService.setToastComponent(this.toastComponent as ToastComponent);
+    this.subscriptionService.getCounter();
   }
 
   ngOnInit() {

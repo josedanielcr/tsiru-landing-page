@@ -2,14 +2,14 @@
 <div class="max-w-6xl px-4 sm:px-6 lg:px-8 lg:pt-16 lg:pb-0 mx-auto mb-16">
   <div class="max-w-xl text-center mx-auto">
 
-    <app-subscribe-count></app-subscribe-count>
-
-    <div class="mb-5">
-      <h2 class="text-2xl md:text-3xl md:leading-tight"> ¡Suscríbete y mantente al día con <span class="text-accent font-bold">Tsiru</span>!</h2>
+    <div class="mt-5 mb-2">
+      <h2 class="text-2xl md:text-3xl md:leading-tight"> ¡Suscríbete y mantente al día!</h2>
     </div>
 
+    <app-subscribe-count></app-subscribe-count>
+
     <form (submit)="onSubmit($event)">
-      <div class="mt-5 lg:mt-8 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
+      <div class="mt-5 lg:mt-2 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
         <div class="w-full">
           <label for="hero-input" class="sr-only">Search</label>
           <input [formControl]="email" type="text" id="hero-input"
@@ -25,6 +25,10 @@
         </a>
       </div>
     </form>
+    <div class="mb-6 ps-16 pe-16 mt-2">
+      <p class="text-md text-gray-400">¡Ya <span class="font-bold text-accent">somos {{subscribeService.counter()}} suscriptores</span> que están un paso más adelante con las noticias y
+        actualizaciones de Tsiru!</p>
+    </div>
   </div>
 </div>
 <!-- End Subscribe -->
