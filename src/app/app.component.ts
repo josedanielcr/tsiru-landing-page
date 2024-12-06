@@ -11,6 +11,9 @@ import {SubscribeComponent} from './components/subscribe/subscribe.component';
 import {ToastComponent} from './components/shared/toast/toast.component';
 import {MessageService} from './services/message.service';
 import {SubscribeService} from './services/subscribe.service';
+import {
+  ScrollToTopComponentComponent
+} from './components/shared/scroll-to-top-component/scroll-to-top-component.component';
 declare global {
   interface Window {
     HSStaticMethods: IStaticMethods;
@@ -20,7 +23,7 @@ declare global {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, HeroComponent, FeaturesComponent, FaqComponent, CompareComponent, FooterComponent, SubscribeComponent, ToastComponent],
+  imports: [RouterOutlet, NavbarComponent, HeroComponent, FeaturesComponent, FaqComponent, CompareComponent, FooterComponent, SubscribeComponent, ToastComponent, ScrollToTopComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
