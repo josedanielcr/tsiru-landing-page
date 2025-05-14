@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterContentChecked, Component, OnChanges, SimpleChanges } from '@angular/core';
 import {NgClass} from '@angular/common';
 
 @Component({

@@ -10,11 +10,13 @@
       <h2 class="text-3xl text-center mb-8 text-primary pb-8 md:pt-32"><span class="font-bold">Tsiru</span> te conecta con infinidad de <span class="font-bold">oportunidades</span>.</h2>
       <!-- Tab Nav -->
       <nav class="max-w-6xl mx-auto flex flex-col sm:flex-row gap-y-2 sm:gap-y-2 sm:gap-x-4" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
-        <button type="button" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start
+        <button type="button"
+          class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start
                 p-3 md:p-5 rounded-xl" id="tabs-with-card-item-2" aria-selected="false"
                 data-hs-tab="#tabs-with-card-2" aria-controls="tabs-with-card-2" role="tab" [ngClass]="{
                   'bg-accent': activeFeatTab === 0,
-                  'bg-white': activeFeatTab !== 0
+                  'bg-white': activeFeatTab !== 0,
+                  'pulse': activeFeatTab !== 0
                 }" (click)="setActiveTab(0)">
 
           @if(activeFeatTab === 0) {
@@ -40,11 +42,14 @@
           </span>
         </button>
 
-        <button type="button" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent
+        <button type="button" [ngClass]="{
+          'pulse' : activeFeatTab === 0
+        }" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent
         w-full flex flex-col text-start p-3 md:p-5 rounded-xl" id="tabs-with-card-item-3"
                 aria-selected="false" data-hs-tab="#tabs-with-card-3" aria-controls="tabs-with-card-3" role="tab" (click)="setActiveTab(1)" [ngClass]="{
                   'bg-accent': activeFeatTab === 1,
-                  'bg-white': activeFeatTab !== 1
+                  'bg-white': activeFeatTab !== 1,
+                  'pulse': activeFeatTab !== 1
                 }">
           @if(activeFeatTab === 1) {
             <svg class="shrink-0 sm:block size-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-white" xmlns="http://www.w3.org/2000/svg"
