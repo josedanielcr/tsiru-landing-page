@@ -1,5 +1,5 @@
 .tsiru-logo {
-  width: 300px;
+  width: 200px;
   height: 50px;
   background: url('Tsiru - Logo 2 Blanco.png') no-repeat;
   background-size: contain;
@@ -8,4 +8,9 @@
 .opt-nav-size {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
+}
+
+.color-prer:hover {
+  background-color: #87A663;
+  color: white;
 }
